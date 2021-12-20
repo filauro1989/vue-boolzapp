@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!-- main -->
-                <div class="wp-main">
+                <div id="wp-main" class="wp-main">
                     <!-- main left column -->
                     <div class="main-left-col">
                         <div class="notifications">
@@ -77,13 +77,13 @@
                             <input name="searchbox" type="text" class="search-box" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="messages-to">
-                            <div class="message-to-friend">
+                            <div v-for="(contact, index) in contacts"  class="message-to-friend">
                                 <div class="friend-avatar">
                                     <img src="img/avatar_3.jpg" alt="">
                                 </div>
                                 <div class="friend-text">
-                                    <p class="name">Michele</p>
-                                    <p class="last-message">ok...</p>
+                                    <p class="name">{{ contact.name }}</p>
+                                    <p class="last-message">{{ contact.messages[2]}}</p>
                                 </div>
                                 <div class="last-message-time">20.12.2021 10:22:21</div>
                             </div>

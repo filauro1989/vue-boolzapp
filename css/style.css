@@ -7,3 +7,97 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
 }
+.main-container {
+    width: 100%;
+    height: 100%;
+}
+.main-container-top {
+    width: 100%;
+    height: 20vh;
+    background-color: #009587;
+}
+.main-container-bottom {
+    width: 100%;
+    height: 80vh;
+    background-color: #DADAD3;
+}
+/* container della web app */
+.whatsapp-container {
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    min-width: 600px;
+}
+.name {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* header */
+.wp-header{
+    width: 100%;
+    height: 50px;
+    background-color: #EAEAEA;
+    display: flex;
+}
+/* user-col */
+.user-col {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    border-right: 1px solid rgb(119, 119, 119) ;
+}
+.user-col-left {
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+.avatar {
+    width: 40px;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 0.5em;
+}
+.avatar img {
+    height: 100%;
+    width: 100%;
+}
+.user-col-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+}
+.user-col-right i,
+.friend-col-right i {
+    margin-right: 0.5em;
+}
+.user-buttons {
+    margin-right: 0.5em;
+    color: #B1B1B1;
+}
+/* friend-col */
+.friend-col {
+    width: 60%;
+    height: 100%;
+    display: flex;
+}
+.friend-col-left {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.friend-col-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+}
+.last-access {
+    font-size: 0.6em;
+    color: #969B9D;
+}

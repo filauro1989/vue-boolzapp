@@ -21,6 +21,11 @@ body {
     height: 80vh;
     background-color: #DADAD3;
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 /* container della web app */
 .whatsapp-container {
     width: 80%;
@@ -261,15 +266,34 @@ body {
 }
 .chat-row {
     width: 100%;
-    height: 50px;
+    height: 60px;
 }
 .chat-message {
-    height: 40px;
+    height: 50px;
     width: auto;
-    background-color: white;
+    min-width: 200px;
     display: inline-block;
     border-radius: 7px;
+    position: relative;
 }
 .chat-message p {
     font-size: 0.8em;
+    padding: 15px;
+    font-weight: bold;
+}
+.chat-message.user-message {
+    background-color: white;
+    float: left;
+}
+.chat-message.friend-message {
+    background-color: #D5F9BA;
+    float: right;
+}
+.chat .chat-date {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    font-size: 0.5em;
+    color: #B6B9BB;
+    padding: 0;
 }

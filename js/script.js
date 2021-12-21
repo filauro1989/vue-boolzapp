@@ -87,7 +87,21 @@ const wpmain = new Vue ({
             ],
             },
         ]
-    }
+    },
+    methods: {
+        getLastMessage: function(index) {
+            let lastMessage = this.contacts[index].messages.length -1;
+            let lastMessageText = this.contacts[index].messages[lastMessage].text;
+
+            return lastMessageText;
+        },
+        getLastDate: function(index) {
+            let lastMessage = this.contacts[index].messages.length -1;
+            let lastMessageDate = this.contacts[index].messages[lastMessage].date;
+
+            return lastMessageDate;
+        }
+    },
 });
 
 

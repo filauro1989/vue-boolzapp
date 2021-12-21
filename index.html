@@ -79,7 +79,7 @@
                         <div class="messages-to">
                             <div v-for="(contact, index) in contacts" class="message-to-friend">
                                 <div class="friend-avatar">
-                                    <img src="img/avatar_3.jpg" alt="">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 </div>
                                 <div class="friend-text">
                                     <p class="name">{{ contact.name }}</p>

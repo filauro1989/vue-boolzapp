@@ -124,6 +124,7 @@ body {
 /* notifications box */
 .notifications {
     height: 60px;
+    min-height: 60px;
     width: 100%;
     background-color: #8EDAFC;
     display: flex;
@@ -154,6 +155,7 @@ body {
 .search {
     width: 100%;
     height: 40px;
+    min-height: 40px;
     background-color: #FAFAFA;
     display: flex;
     align-items: center;
@@ -229,7 +231,7 @@ body {
     height: calc(100% - 40px);
     width: 100%;
     background-image: url(../img/mine.jpg);
-    background-size: cover;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     padding: 2em 3em;

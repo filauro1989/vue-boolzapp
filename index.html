@@ -94,8 +94,8 @@
                         <div class="chat">
                             <div v-for="(message, index) in contacts[0].messages" class="chat-row clearfix">
                                 <div class="chat-message user-message">
-                                    <p>La marianna va in campagna</p>
-                                    <p class="chat-date">28/03/2020 10:10:40</p>
+                                    <p>{{ message.text }}</p>
+                                    <p class="chat-date">{{ message.date }}</p>
                                 </div>
                             </div>
                             <!-- <div class="chat-row clearfix">

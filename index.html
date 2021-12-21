@@ -92,13 +92,13 @@
                     <!-- main right column -->
                     <div class="main-right-col">
                         <div class="chat">
-                            <div class="chat-row clearfix">
+                            <div v-for="(message, index) in contacts[0].messages" class="chat-row clearfix">
                                 <div class="chat-message user-message">
                                     <p>La marianna va in campagna</p>
                                     <p class="chat-date">28/03/2020 10:10:40</p>
                                 </div>
                             </div>
-                            <div class="chat-row clearfix">
+                            <!-- <div class="chat-row clearfix">
                                 <div class="chat-message friend-message">
                                     <p>Sicuro di non aver sbagliato chat?</p>
                                     <p class="chat-date">28/03/2020 10:10:40</p>
@@ -109,7 +109,7 @@
                                     <p>Ah scusa!</p>
                                     <p class="chat-date">28/03/2020 10:10:40</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="chat-input">
                             <div class="smile"><i class="far fa-smile"></i></div>

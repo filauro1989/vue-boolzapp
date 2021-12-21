@@ -77,13 +77,13 @@
                             <input name="searchbox" type="text" class="search-box" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="messages-to">
-                            <div v-for="(contact, index) in contacts"  class="message-to-friend">
+                            <div v-for="(contact, index) in contacts" class="message-to-friend">
                                 <div class="friend-avatar">
                                     <img src="img/avatar_3.jpg" alt="">
                                 </div>
                                 <div class="friend-text">
                                     <p class="name">{{ contact.name }}</p>
-                                    <p class="last-message">{{ contact.messages[2]}}</p>
+                                    <p class="last-message"></p>
                                 </div>
                                 <div class="last-message-time">20.12.2021 10:22:21</div>
                             </div>
@@ -92,7 +92,17 @@
                     <!-- main right column -->
                     <div class="main-right-col">
                         <div class="chat">
-                            
+                            <div class="chat-row">
+                                <div class="chat-message">
+                                    <p>La marianna va in campagna</p>
+                                </div>
+                            </div>
+                            <div class="chat-row">
+
+                            </div>
+                            <div class="chat-row">
+
+                            </div>
                         </div>
                         <div class="chat-input">
                             <div class="smile"><i class="far fa-smile"></i></div>

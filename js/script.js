@@ -109,6 +109,6 @@ const wpmain = new Vue ({
 
         changeContact: function(index){
             this.indexContact = index;
-        }
+        },
     },
 });

@@ -74,10 +74,10 @@
                         </div>
                         <div class="search">
                             <label for="searchbox"><i class="fas fa-search"></i></label>
-                            <input name="searchbox" type="text" class="search-box" placeholder="Cerca o inizia una nuova chat">
+                            <input @keyup="searchChat()" v-model="searchText" name="searchbox" type="text" class="search-box" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="messages-to">
-                            <div v-for="(contact, index) in contacts" class="message-to-friend" @click="changeContact(index)">
+                            <div v-if="contact.visible" v-for="(contact, index) in contacts" class="message-to-friend" @click="changeContact(index)">
                                 <div class="friend-avatar">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 </div>

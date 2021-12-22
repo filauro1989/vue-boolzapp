@@ -283,13 +283,13 @@ body {
     padding: 15px;
     font-weight: bold;
 }
-.chat-message.user-message {
-    background-color: white;
-    float: left;
-}
-.chat-message.friend-message {
+.chat-message.sent {
     background-color: #D5F9BA;
     float: right;
+}
+.chat-message.received {
+    background-color: white;
+    float: left;
 }
 .chat .chat-date {
     position: absolute;

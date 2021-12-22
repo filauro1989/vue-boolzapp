@@ -88,6 +88,9 @@ const wpmain = new Vue ({
             },
         ]
     },
+    created() {
+        
+    },
     methods: {
         getLastMessage: function(index) {
             let lastMessage = this.contacts[index].messages.length -1;
@@ -103,6 +106,3 @@ const wpmain = new Vue ({
         }
     },
 });
-
-
-

@@ -18,7 +18,7 @@
             <div class="main-container-top"></div>
             <div class="main-container-bottom"></div>
             <!-- container web app -->
-            <div class="whatsapp-container">
+            <div id="wp-main" class="whatsapp-container">
                 <!-- header -->
                 <div class="wp-header">
                     <!-- left column user -->
@@ -46,7 +46,7 @@
                                 <img src="img/avatar_2.jpg" alt="">
                             </div>
                             <div class="friend-name">
-                                <p class="name">Samuele</p>
+                                <p class="name">{{ contacts[0].name }}</p>
                                 <p class="last-access">Ultimo accesso oggi alle 28/03/2020 16:15:22</p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!-- main -->
-                <div id="wp-main" class="wp-main">
+                <div class="wp-main">
                     <!-- main left column -->
                     <div class="main-left-col">
                         <div class="notifications">
@@ -93,7 +93,7 @@
                     <div class="main-right-col">
                         <div class="chat">
                             <div v-for="(message, index) in contacts[0].messages" class="chat-row clearfix">
-                                <div class="chat-message user-message">
+                                <div class="chat-message" :class="(message.status == 'sent') ? 'sent' : 'received'">
                                     <p>{{ message.text }}</p>
                                     <p class="chat-date">{{ message.date }}</p>
                                 </div>

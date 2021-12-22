@@ -1,6 +1,7 @@
 const wpmain = new Vue ({
     el: '#wp-main',
     data: {
+        indexContact: 0,
         contacts: [
             {
             name: "Michele",

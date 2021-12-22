@@ -2,7 +2,8 @@ const wpmain = new Vue ({
     el: '#wp-main',
     data: {
         // assegno indexContact per avere un indice da utilizzare al click
-        indexContact: 0, 
+        indexContact: 0,
+        text: '',
         contacts: [
             {
             name: "Michele",
@@ -110,5 +111,28 @@ const wpmain = new Vue ({
         changeContact: function(index){
             this.indexContact = index;
         },
+        getText: function() {
+            if(this.text != '') {
+                this.contacts[this.indexContact].messages.push({
+                    date: "10/01/2021 15:30:22",
+                    text: this.text,
+                    status: "sent",
+                });
+            }
+            this.text = '';
+
+            setTimeout(() => {
+                this.contacts[this.indexContact].messages.push({
+                    date: "10/01/2021 15:30:22",
+                    text: 'ok',
+                    status: "received",
+                });
+            }, 1000);
+        }
     },
 });
+
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+

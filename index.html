@@ -102,7 +102,7 @@
                         </div>
                         <div class="chat-input">
                             <div class="smile"><i class="far fa-smile"></i></div>
-                            <input class="chat-input-text" type="text" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter="getText()" v-model="text" class="chat-input-text" type="text" placeholder="Scrivi un messaggio">
                             <div class="microphone"><i class="fas fa-microphone"></i></div>
                         </div>
                     </div>

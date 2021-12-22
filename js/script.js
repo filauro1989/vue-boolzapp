@@ -1,7 +1,8 @@
 const wpmain = new Vue ({
     el: '#wp-main',
     data: {
-        indexContact: 0,
+        // assegno indexContact per avere un indice da utilizzare al click
+        indexContact: 0, 
         contacts: [
             {
             name: "Michele",
@@ -104,6 +105,10 @@ const wpmain = new Vue ({
             let lastMessageDate = this.contacts[index].messages[lastMessage].date;
 
             return lastMessageDate;
+        },
+
+        changeContact: function(index){
+            this.indexContact = index;
         }
     },
 });

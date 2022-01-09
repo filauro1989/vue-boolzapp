@@ -105,7 +105,6 @@ const wpmain = new Vue ({
         ]
     },
     created() {
-        console.log(contact.messages[contact.messages.length - 1]);
     },
     methods: {
         // ultimo messaggio
@@ -162,13 +161,14 @@ const wpmain = new Vue ({
                 }
             });
         },
-        menuDropdown: function(index) {
-            // assegno al counter il valore index definito nel v-for dell'html
+        // menuDropdown: function(index) {
+        //     // assegno al counter il valore index definito nel v-for dell'html
+        //     this.counter = index;
+        //     // sostituisco la variabile booleana menuVisible col suo opposto
+        //     this.contacts[this.indexContact].messages[this.counter].menuVisible = !this.contacts[this.indexContact].messages[this.counter].menuVisible;
+        // },
+        deletingMessage: function(index) {
             this.counter = index;
-            // sostituisco la variabile booleana menuVisible col suo opposto
-            this.contacts[this.indexContact].messages[this.counter].menuVisible = !this.contacts[this.indexContact].messages[this.counter].menuVisible;
-        },
-        deletingMessage: function() {
             this.contacts[this.indexContact].messages.splice(this.counter, 1);
         }
     },

@@ -77,7 +77,7 @@
                             <input @keyup="searchChat()" v-model="searchText" name="searchbox" type="text" class="search-box" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="messages-to">
-                            <div v-if="contact.visible" v-for="(contact, index) in contacts" class="message-to-friend" @click="changeContact(index)" :class="(indexContact == index) ? 'active' : ''">
+                            <div v-if="contact.visible && contact.messages[contact.messages.length -1] != null" v-for="(contact, index) in contacts" class="message-to-friend" @click="changeContact(index)" :class="(indexContact == index) ? 'active' : ''">
                                 <div class="friend-avatar">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 </div>
@@ -94,13 +94,14 @@
                         <div class="chat">
                             <!-- al click indexContact diventa uguale all'index del vfor e perciò cambia la stampa sulla pagina -->
                             <div v-for="(message, index) in contacts[indexContact].messages" class="chat-row clearfix">
-                                <div @click='menuDropdown(index)' class="chat-message" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                                <div @click='message.menuVisible = !message.menuVisible' class="chat-message" :class="(message.status == 'sent') ? 'sent' : 'received'">
                                     <p>{{ message.text }}</p>
                                     <p class="chat-date">{{ message.date }}</p>
                                     <i class="fas fa-angle-down arrow-menu"></i>
-                                    <div :class="message.menuVisible == true ? 'show' : ''" class="deleting-menu">
+                                    <!-- <div :class="message.menuVisible == true ? 'show' : ''" class="deleting-menu"> -->
+                                    <div v-show="message.menuVisible" class="deleting-menu">
                                         <p>Message info</p>
-                                        <p @click='deletingMessage'>Delete message</p>
+                                        <p @click='deletingMessage(index)'>Delete message</p>
                                     </div>
                                 </div>
                             </div>

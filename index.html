@@ -83,9 +83,9 @@
                                 </div>
                                 <div class="friend-text">
                                     <p class="name">{{ contact.name }}</p>
-                                    <p class="last-message">{{ getLastMessage(index) }}</p>
+                                    <p v-if="contact.messages[contact.messages.length - 1] != null" class="last-message">{{ getLastMessage(index) }}</p>
                                 </div>
-                                <div class="last-message-time">{{ getLastDate(index) }}</div>
+                                <div v-if="contact.messages[contact.messages.length - 1] != null" class="last-message-time">{{ getLastDate(index) }}</div>
                             </div>
                         </div>
                     </div>

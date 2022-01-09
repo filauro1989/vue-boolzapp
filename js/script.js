@@ -105,7 +105,7 @@ const wpmain = new Vue ({
         ]
     },
     created() {
-        
+        console.log(contact.messages[contact.messages.length - 1]);
     },
     methods: {
         // ultimo messaggio

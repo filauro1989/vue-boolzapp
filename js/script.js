@@ -114,22 +114,23 @@ const wpmain = new Vue ({
         },
         getText: function() {
             let messageArray = this.contacts[this.indexContact].messages;
-            if(this.text != '') {
+            if(this.text.trim().length > 0) {
                 messageArray.push({
                     date: "10/01/2021 15:30:22",
                     text: this.text,
                     status: "sent",
                 });
-            }
+            
             this.text = '';
 
-            setTimeout(() => {
-                messageArray.push({
-                    date: "10/01/2021 15:30:22",
-                    text: 'ok',
-                    status: "received",
-                });
-            }, 1000);
+                setTimeout(() => {
+                    messageArray.push({
+                        date: "10/01/2021 15:30:22",
+                        text: 'ok',
+                        status: "received",
+                    });
+                }, 1000);
+            }
         },
         searchChat: function() {
             // per ogni contatto scansiono il nome e assegno visible true o false se una lettera è contenuta nell'input

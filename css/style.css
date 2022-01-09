@@ -194,11 +194,11 @@ body {
     align-items: center;
     position: relative;
 }
-.message-to-friend.active {
-    background-color: #b5b8b8;
-}
 .message-to-friend:hover {
     background-color: #E9EBEB;
+}
+.message-to-friend.active {
+    background-color: #b5b8b8;
 }
 .friend-avatar {
     width: 40px;
@@ -239,6 +239,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 2em 3em;
+    overflow: auto;
 }
 .chat-input {
     height: 40px;

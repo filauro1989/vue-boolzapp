@@ -108,14 +108,19 @@ const wpmain = new Vue ({
         
     },
     methods: {
+        // ultimo messaggio
         getLastMessage: function(index) {
+            // seleziono l'ultimo elemento di messages in contacts
             let lastMessage = this.contacts[index].messages.length -1;
+            // seleziono il text dell'ultimo elemento
             let lastMessageText = this.contacts[index].messages[lastMessage].text;
 
             return lastMessageText;
         },
         getLastDate: function(index) {
+            // seleziono l'ultimo elemento di messages in contacts
             let lastMessage = this.contacts[index].messages.length -1;
+            // seleziono il date dell'ultimo elemento
             let lastMessageDate = this.contacts[index].messages[lastMessage].date;
 
             return lastMessageDate;
@@ -126,6 +131,7 @@ const wpmain = new Vue ({
         },
         getText: function() {
             let messageArray = this.contacts[this.indexContact].messages;
+            // il trim serve a eliminare gli spazi
             if(this.text.trim().length > 0) {
                 messageArray.push({
                     date: "10/01/2021 15:30:22",
@@ -147,7 +153,7 @@ const wpmain = new Vue ({
             }
         },
         searchChat: function() {
-            // per ogni contatto scansiono il nome e assegno visible true o false se una lettera è contenuta nell'input
+            // per ogni contacts scansiono il name e assegno visible true o false se una lettera è contenuta nell'V-input nell'html
             this.contacts.forEach(contact => {
                 if (contact.name.toLowerCase().includes(this.searchText.toLowerCase())){
                     contact.visible = true;
@@ -157,7 +163,9 @@ const wpmain = new Vue ({
             });
         },
         menuDropdown: function(index) {
+            // assegno al counter il valore index definito nel v-for dell'html
             this.counter = index;
+            // sostituisco la variabile booleana menuVisible col suo opposto
             this.contacts[this.indexContact].messages[this.counter].menuVisible = !this.contacts[this.indexContact].messages[this.counter].menuVisible;
         },
         deletingMessage: function() {

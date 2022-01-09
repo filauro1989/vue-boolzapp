@@ -303,3 +303,20 @@ body {
     color: #B6B9BB;
     padding: 0;
 }
+.arrow-menu {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    cursor: pointer;
+}
+.deleting-menu {
+    position: absolute;
+    background-color: white;
+    top: 19px;
+    right: 7px;
+    display: none;
+    z-index: 3;
+}
+.deleting-menu.show {
+    display: block;
+}

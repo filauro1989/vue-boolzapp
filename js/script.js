@@ -3,6 +3,7 @@ const wpmain = new Vue ({
     data: {
         // assegno indexContact per avere un indice da utilizzare al click
         indexContact: 0,
+        counter: 0,
         text: '',
         searchText: '',
         contacts: [
@@ -15,16 +16,19 @@ const wpmain = new Vue ({
                     date: "10/01/2020 15:30:55",
                     text: "Hai portato a spasso il cane?",
                     status: "sent",
+                    menuVisible: false
                 },
                 {
                     date: "10/01/2020 15:50:00",
                     text: "Ricordati di dargli da mangiare",
                     status: "sent",
+                    menuVisible: false
                 },
                 {
                     date: "10/01/2020 16:15:22",
                     text: "Tutto fatto!",
                     status: "received",
+                    menuVisible: false
                 },
             ],
             },
@@ -37,22 +41,25 @@ const wpmain = new Vue ({
                     date: "20/03/2020 16:30:00",
                     text: "Ciao come stai?",
                     status: "sent",
+                    menuVisible: false
                 },
                 {
                     date: "20/03/2020 16:30:55",
                     text: "Bene grazie! Stasera ci vediamo?",
                     status: "received",
+                    menuVisible: false
                 },
                 {
                     date: "20/03/2020 16:35:00",
                     text: "Mi piacerebbe ma devo andare a fare la spesa.",
                     status: "sent",
+                    menuVisible: false
                 },
             ],
             },
         
             {
-            name: "Samuele",
+            name: "Marco",
             avatar: "_3",
             visible: true,
             messages: [
@@ -60,21 +67,24 @@ const wpmain = new Vue ({
                     date: "28/03/2020 10:10:40",
                     text: "La Marianna va in campagna",
                     status: "received",
+                    menuVisible: false
                 },
                 {
                     date: "28/03/2020 10:20:10",
                     text: "Sicuro di non aver sbagliato chat?",
                     status: "sent",
+                    menuVisible: false
                 },
                 {
                     date: "28/03/2020 16:15:22",
                     text: "Ah scusa!",
                     status: "received",
+                    menuVisible: false
                 },
             ],
             },
             {
-            name: "Luisa",
+            name: "Martina",
             avatar: "_4",
             visible: true,
             messages: [
@@ -82,11 +92,13 @@ const wpmain = new Vue ({
                     date: "10/01/2020 15:30:55",
                     text: "Lo sai che ha aperto una nuova pizzeria?",
                     status: "sent",
+                    menuVisible: false
                 },
                 {
                     date: "10/01/2020 15:50:00",
                     text: "Si, ma preferirei andare al cinema",
                     status: "received",
+                    menuVisible: false
                 },
             ],
             },
@@ -119,6 +131,7 @@ const wpmain = new Vue ({
                     date: "10/01/2021 15:30:22",
                     text: this.text,
                     status: "sent",
+                    menuVisible: false
                 });
             
             this.text = '';
@@ -128,6 +141,7 @@ const wpmain = new Vue ({
                         date: "10/01/2021 15:30:22",
                         text: 'ok',
                         status: "received",
+                        menuVisible: false
                     });
                 }, 1000);
             }
@@ -141,6 +155,13 @@ const wpmain = new Vue ({
                     contact.visible = false;
                 }
             });
+        },
+        menuDropdown: function(index) {
+            this.counter = index;
+            this.contacts[this.indexContact].messages[this.counter].menuVisible = !this.contacts[this.indexContact].messages[this.counter].menuVisible;
+        },
+        deletingMessage: function() {
+            this.contacts[this.indexContact].messages.splice(this.counter, 1);
         }
     },
 });
@@ -151,4 +172,9 @@ const wpmain = new Vue ({
 
 // Milestone 4
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+// Milestone 5
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
+// Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
 

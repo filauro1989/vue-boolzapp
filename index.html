@@ -94,9 +94,14 @@
                         <div class="chat">
                             <!-- al click indexContact diventa uguale all'index del vfor e perciò cambia la stampa sulla pagina -->
                             <div v-for="(message, index) in contacts[indexContact].messages" class="chat-row clearfix">
-                                <div class="chat-message" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                                <div @click='menuDropdown(index)' class="chat-message" :class="(message.status == 'sent') ? 'sent' : 'received'">
                                     <p>{{ message.text }}</p>
                                     <p class="chat-date">{{ message.date }}</p>
+                                    <i class="fas fa-angle-down arrow-menu"></i>
+                                    <div :class="message.menuVisible == true ? 'show' : ''" class="deleting-menu">
+                                        <p>Message info</p>
+                                        <p @click='deletingMessage'>Delete message</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
